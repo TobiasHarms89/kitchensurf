@@ -1,0 +1,20 @@
+{% extends "kitchen_app/base.html" %}
+{% block body_block %}
+{% if registered %}
+  <h1>Thank you for registering!</h1>
+{% else %}
+<h1>Register Here!</h1>
+<h3>Fill out the Form:</h3>
+
+<form enctype="multipart/form-data" method="post">
+  {% csrf_token %}
+<table>
+
+  {{ user_form.as_ul }}
+  {{ profile_form.as_ul}}
+</table>
+
+  <input type="submit" name="" value="Register">
+</form>
+{% endif %}
+{% endblock %}

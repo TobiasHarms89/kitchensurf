@@ -1,0 +1,27 @@
+{% extends "kitchen_app/base.html" %}
+{% block body_block %}
+<h1>List of Events: </h1>
+
+{% if events_record %}
+{% for eve in events_record %}
+
+
+<ul>
+
+ <li>{{eve.Name_Event}}</li>
+<ul>
+
+<li>Date of the Event: <br> {{eve.Date_Event}}</li>
+
+<li>Number of Guests:<br> {{eve.Guest_Number}}</li>
+
+</ul>
+</ul>
+
+{%endfor%}
+
+{% else %}
+<p>NO ACCESS RECORDS FOUND!</p>
+
+{%endif%}
+{% endblock %}
